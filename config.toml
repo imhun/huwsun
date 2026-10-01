@@ -1,5 +1,5 @@
-baseURL = "https://blog.imhu.xyz/"
-languageCode = "en"
+baseURL = "https://imhun.com/"
+locale = "en"
 defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "人心如花木，皆向阳而生"
 preserveTaxonomyNames = true
@@ -10,18 +10,19 @@ enableGitInfo = true # use git commit log to generate lastmod record # 可根据
 
 # Syntax highlighting by Chroma. NOTE: Don't enable `highlightInClient` and `chroma` at the same time!
 pygmentsOptions = "linenos=table"
+pygmentsStyle = "monokai"
 pygmentsCodefences = true
 pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
 
 hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 5                                              # 首页每页显示的文章数
+pagination.pagerSize = 5                                  # 首页每页显示的文章数
 disqusShortname = ""      # disqus_shortname
-googleAnalytics = ""      # UA-XXXXXXXX-X
+googleAnalytics = "G-G4NWL3SM8P"      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author]                  # essential                     # 必需
-  name = "Polars"
+  name = "Imhun"
 
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
@@ -56,10 +57,10 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   since = "2013"            # Site creation time          # 站点建立时间
   # use public git repo url to link lastmod git commit, enableGitInfo should be true.
   # 指定 git 仓库地址，可以生成指向最近更新的 git commit 的链接，需要将 enableGitInfo 设置成 true.
-  gitRepo = ""
+  gitRepo = "https://github.com/imhun/imhun.github.io"
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "Polars"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Imhun"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["技术", "大数据","rust"]
   description = "人心如花木，皆向阳而生"
 
@@ -140,8 +141,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     clientSecret = ""       # Your client secret
 
   [params.utterances]       # https://utteranc.es/
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
+    owner = "imhun"              # Your GitHub ID
+    repo = "imhun.github.io"               # The repo to store comments
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
     owner = ""              # Your GitHub ID
@@ -171,7 +172,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     options = ""            # default: "{theme: 'simple'}"
 
   [params.busuanzi]         # count web traffic by busuanzi                             # 是否使用不蒜子统计站点访问量
-    enable = false
+    enable = true
     siteUV = true
     sitePV = true
     pagePV = true
@@ -182,13 +183,13 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "mailto:a@imhu.xyz"
+    a-email = "mailto:m@imhun.com"
     #b-stack-overflow = "http://localhost:1313"
     #c-twitter = "http://localhost:1313"
     #d-facebook = "http://localhost:1313"
     #e-linkedin = "http://localhost:1313"
     #f-google = "http://localhost:1313"
-    g-github = "https://github.com/huwsun"
+    g-github = "https://github.com/imhun"
     #h-weibo = "http://localhost:1313"
     #i-zhihu = "http://localhost:1313"
     #j-douban = "http://localhost:1313"

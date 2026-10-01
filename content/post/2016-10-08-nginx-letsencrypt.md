@@ -81,7 +81,7 @@ server {
 配置完成以后，重启nginx: `sudo systemctl restart nginx`
 
 然后就可以通过https访问你的网站了，如图：
-![ssl certificate](2016-10-08-nginx-letsencrypt/2016-10-18-10-11-12.png)
+![ssl certificate](2016-10-18-10-11-12.png)
 
 ## 证书更新
 let's encrypt的证书有效期为3个月，到期之前需要重新生成才能继续使用，通过以下命令重新生成证书：    
