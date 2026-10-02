@@ -1,5 +1,9 @@
 baseURL = "https://imhun.com/"
-locale = "en"
+# 不要在这里再写 locale。根级 locale 会被 Hugo 传播成默认语言的 locale，
+# 和下面的 defaultContentLanguage 变成两份数据源；只要它存在（无论写成什么值），
+# 站点就会用 en 的 i18n 文件，界面出现 "Posts In Total" / "Next" 这类英文，
+# 同时 <meta og:locale> 也输出 en，而 <html lang> 却是 zh-cn。
+# 语言只由 defaultContentLanguage 决定。
 defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "人心如花木，皆向阳而生"
 preserveTaxonomyNames = true
