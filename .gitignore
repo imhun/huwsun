@@ -2,3 +2,5 @@
 tmp/
 node_modules/
 .patchloom/
+resources/_gen/
+.hugo_build.lock
