@@ -107,8 +107,9 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  customCSS = ["search-modal.css"]
-  customJS = ["search-modal.js"]
+  # 带 ?v= 版本号用于破缓存：改完资源后把数字 +1，访客就不必强刷
+  customCSS = ["search-modal.css?v=1"]
+  customJS = ["search-modal.js?v=1"]
 
   uglyURLs = false          # please keep same with uglyurls setting
 
