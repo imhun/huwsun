@@ -5,7 +5,7 @@
   "description": "Build scripts for imhun.com (Hugo + Pagefind)",
   "scripts": {
     "build": "hugo --minify && npm run index",
-    "index": "pagefind --site public",
+    "index": "rm -rf public/pagefind && pagefind --site public",
     "serve": "hugo server -D --port 1414 --panicOnWarning",
     "preview": "python3 -m http.server 1414 --directory public"
   },
