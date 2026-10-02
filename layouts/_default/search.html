@@ -1,0 +1,71 @@
+{{ define "content" -}}
+<link rel="stylesheet" href="{{ "pagefind/pagefind-ui.css" | relURL }}">
+<style>
+  .search-page .post-content {
+    padding-top: 1rem;
+  }
+  #search {
+    --pagefind-ui-primary: #c05b4d;
+    --pagefind-ui-text: #34495e;
+    --pagefind-ui-background: #fff;
+    --pagefind-ui-border: #dedede;
+    --pagefind-ui-tag: #f8f5ec;
+    --pagefind-ui-border-radius: 4px;
+    --pagefind-ui-font: inherit;
+  }
+  #search .pagefind-ui__result-link {
+    color: #c05b4d;
+  }
+  #search .pagefind-ui__result-excerpt mark {
+    background: #f8f5ec;
+    color: #c05b4d;
+  }
+</style>
+
+<article class="post search-page">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  <div class="post-content">
+    <div id="search" data-pagefind-ignore></div>
+    <noscript>搜索需要启用 JavaScript。</noscript>
+  </div>
+</article>
+
+<script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (typeof PagefindUI === 'undefined') {
+      document.getElementById('search').innerHTML =
+        '<p>搜索索引未生成，请先运行 <code>npm run build</code> 后再预览。</p>';
+      return;
+    }
+    new PagefindUI({
+      element: '#search',
+      showSubResults: true,
+      showImages: false,
+      pageSize: 10,
+      translations: {
+        placeholder: '搜索文章…',
+        clear_search: '清除',
+        load_more: '加载更多结果',
+        search_label: '搜索本站',
+        filters_label: '筛选',
+        zero_results: '没有找到与 [SEARCH_TERM] 相关的内容',
+        many_results: '找到 [COUNT] 条与 [SEARCH_TERM] 相关的内容',
+        one_result: '找到 [COUNT] 条与 [SEARCH_TERM] 相关的内容',
+        total_zero_results: '没有结果',
+        total_one_result: '[COUNT] 条结果',
+        total_many_results: '[COUNT] 条结果',
+        alt_search: '没有找到 [SEARCH_TERM]，改为显示 [DIFFERENT_TERM] 的结果',
+        search_suggestion: '没有找到 [SEARCH_TERM]，试试以下关键词：',
+        searching: '正在搜索 [SEARCH_TERM]…',
+        results_label: '搜索结果',
+        error_search: '搜索失败',
+        input_hint: '输入即开始搜索',
+        loading: '加载中'
+      }
+    });
+  });
+</script>
+{{- end }}
